@@ -1,5 +1,38 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<title>我的第一个页面<title/>
-  这是内容
-<html/>
+<head>
+  <meta charset="utf-8">
+  <title>zhuyu的博客</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.js"></script>
+  <link rel="stylesheet" href="https://typo.sofi.sh/typo.css">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <style>
+    body{
+      padding: 16px;
+    }
+    img{
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="content"></div>
+  
+  <script>
+    var markdown = `
+# 我的第一篇博客
+
+**zhuyu**
+
+> 不要相信网上的名人名言。 ——鲁迅
+
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520174808670&di=9e5f10b06f7c504f94d6efc8c7ba476a&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F120418%2F94799-12041Q3002761.jpg" alt="">
+
+`
+    var html = marked(markdown)
+    
+    console.log(html)
+    document.getElementById('content').innerHTML = html
+  </script>
+</body>
+</html>
